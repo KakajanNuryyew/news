@@ -22,8 +22,8 @@ Then add a virtual host in the bottom of the file like:
 </VirtualHost>
 
 Api routes:
-http://news.local/api/v2/news
-http://news.local/api/v2/news/2
+1) http://news.local/api/v2/news
+2) http://news.local/api/v2/news/2
 
 -----------------------------------
 Admin:
