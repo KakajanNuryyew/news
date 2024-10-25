@@ -21,6 +21,10 @@ Then add a virtual host in the bottom of the file like:
     ServerName news.local
 </VirtualHost>
 
+Api routes:
+http://news.local/api/v2/news
+http://news.local/api/v2/news/2
+
 -----------------------------------
 Admin:
 login => Admin
