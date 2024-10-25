@@ -1,0 +1,50 @@
+.header { 
+    margin-top: 12px;
+}
+
+.header .nav-item {
+    border: 1px solid black;
+    border-radius: 12px;
+    width: 110px;
+    text-align: center;
+}
+
+.header, .footer {
+    border: 1px solid black;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+}
+
+.footer p {
+    margin-bottom: 0;
+}
+
+main { 
+    min-height: calc(100vh - 140px);
+    padding-top: 24px;
+}
+
+.news-page {
+    border-bottom: 1px solid black;
+}
+
+.news-page .news-item {
+    color: black;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.new-page img {
+    object-fit: contain;
+}
+
+.new-page .created-at {
+    text-align: right;
+}
