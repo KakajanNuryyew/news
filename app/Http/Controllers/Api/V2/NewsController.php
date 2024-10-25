@@ -11,7 +11,7 @@ class NewsController extends Controller
 {
     public function get() 
     {
-        $news = News::where('id', '>', 1)->cursorPaginate(4);
+        $news = News::cursorPaginate(4);
 
         foreach ($news as $key => $new) {
             $news[$key] = $new->formattedForApi();
