@@ -24,25 +24,14 @@ class UserSeeder extends Seeder
 
         $user->assignRole(User::ADMIN);
 
-        $user = User::create([
-            'login' => 'User 1',
-            'password' => Hash::make('123456'),
-        ]);
-
-        $user->assignRole(User::CONTENT_MANAGER);
-
-        $user = User::create([
-            'login' => 'User 2',
-            'password' => Hash::make('123456'),
-        ]);
-
-        $user->assignRole(User::CONTENT_MANAGER);
-
-        $user = User::create([
-            'login' => 'User 3',
-            'password' => Hash::make('123456'),
-        ]);
-
-        $user->assignRole(User::CONTENT_MANAGER);
+        for ($i=0; $i < 3; $i++) { 
+            $count = $i+1;
+            $user = User::create([
+                'login' => 'User '.$count,
+                'password' => Hash::make('123456'),
+            ]);
+    
+            $user->assignRole(User::CONTENT_MANAGER);
+        }
     }
 }
