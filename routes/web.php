@@ -34,7 +34,7 @@ Auth::routes();
 //my account routes
 Route::group(['prefix' => '/my', 'middleware' => ['auth']], function () {
     Route::get('/password', [ProfileController::class, 'password'])->name('my.password');   
-    Route::post('/password', [ProfileController::class, 'passwordUpdate'])->name('my.password.update');   
+    Route::patch('/password', [ProfileController::class, 'passwordUpdate'])->name('my.password.update');   
     
     Route::group(['prefix' => '/news'], function () {
         Route::get('/create', [MyNewsController::class, 'create'])->name('my.news.create');   
@@ -56,8 +56,8 @@ Route::group(['prefix' => '/admin', 'middleware' => ['admin']], function () {
         Route::get('/create', [AdminNewsController::class, 'create'])->name('admin.news.create');
         Route::post('/create', [AdminNewsController::class, 'store'])->name('admin.news.store'); 
         Route::get('/{id}', [AdminNewsController::class, 'edit'])->name('admin.news.edit');
-        Route::post('/{id}', [AdminNewsController::class, 'update'])->name('admin.news.update');
-        Route::get('/destroy/{id}', [AdminNewsController::class, 'destroy'])->name('admin.news.destroy');        
+        Route::patch('/{id}', [AdminNewsController::class, 'update'])->name('admin.news.update');
+        Route::delete('/{id}', [AdminNewsController::class, 'destroy'])->name('admin.news.destroy');        
     });
 
     Route::group(['prefix' => '/users'], function () {
@@ -66,8 +66,8 @@ Route::group(['prefix' => '/admin', 'middleware' => ['admin']], function () {
         Route::get('/create', [UserController::class, 'create'])->name('admin.users.create');
         Route::post('/create', [UserController::class, 'store'])->name('admin.users.store'); 
         Route::get('/{id}', [UserController::class, 'edit'])->name('admin.users.edit');
-        Route::post('/{id}', [UserController::class, 'update'])->name('admin.users.update');
-        Route::get('/destroy/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');        
+        Route::patch('/{id}', [UserController::class, 'update'])->name('admin.users.update');
+        Route::delete('/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');        
     });
 
 });
